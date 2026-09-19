@@ -11,4 +11,4 @@ uv sync
 uv run uvicorn main:app --reload
 ```
 
-Updated: 2026-09-17
+Updated: 2026-09-19
