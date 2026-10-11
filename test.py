@@ -1,3 +1,9 @@
+"""Simple in-memory Todo CRUD API.
+
+Data lives in a Python list and resets when the process restarts.
+Useful as a minimal FastAPI example of create/read/update/delete.
+"""
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
@@ -14,6 +20,7 @@ todos: list[Todo] = []
 
 
 def _find_index(todo_id: int) -> int:
+    """Return the list index of a todo by id, or -1 if not found."""
     for index, todo in enumerate(todos):
         if todo.id == todo_id:
             return index
