@@ -28,20 +28,20 @@ def _find_index(todo_id: int) -> int:
 
 
 @app.post("/todos", status_code=201)
-def create(todo: Todo):
+def create(todo: Todo) -> Todo:
     if _find_index(todo.id) != -1:
-        raise HTTPException(status_code=409, detail="Todo id already exists")
+        raise HTTPException(status_code=409, detail=f"Todo with id {todo.id} already exists")
     todos.append(todo)
     return todo
 
 
 @app.get("/todos")
-def get():
+def get() -> list[Todo]:
     return todos
 
 
 @app.get("/todos/{todo_id}")
-def read(todo_id: int):
+def read(todo_id: int) -> Todo:
     index = _find_index(todo_id)
     if index == -1:
         raise HTTPException(status_code=404, detail="Todo not found")
@@ -49,7 +49,7 @@ def read(todo_id: int):
 
 
 @app.put("/todos/{todo_id}")
-def put(todo_id: int, updated_todo: Todo):
+def put(todo_id: int, updated_todo: Todo) -> Todo:
     index = _find_index(todo_id)
     if index == -1:
         raise HTTPException(status_code=404, detail="Todo not found")
@@ -59,7 +59,7 @@ def put(todo_id: int, updated_todo: Todo):
 
 
 @app.delete("/todos/{todo_id}")
-def delete(todo_id: int):
+def delete(todo_id: int) -> dict:
     index = _find_index(todo_id)
     if index == -1:
         raise HTTPException(status_code=404, detail="Todo not found")
