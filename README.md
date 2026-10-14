@@ -27,6 +27,8 @@ uv run uvicorn test:app --reload
 
 The API will be available at `http://127.0.0.1:8000`.
 
+**Note:** The FastAPI application is defined in `test.py`. `main.py` is a simple placeholder script.
+
 ## Example
 
 ```bash
@@ -35,4 +37,4 @@ curl -X POST http://127.0.0.1:8000/todos \
   -d '{"id": 1, "todo": "Learn FastAPI", "completed": false}'
 ```
 
-Updated: 2026-10-12
+Updated: 2026-10-14
