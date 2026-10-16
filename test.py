@@ -44,7 +44,7 @@ def get() -> list[Todo]:
 def read(todo_id: int) -> Todo:
     index = _find_index(todo_id)
     if index == -1:
-        raise HTTPException(status_code=404, detail="Todo not found")
+        raise HTTPException(status_code=404, detail=f"Todo with id {todo_id} not found")
     return todos[index]
 
 
@@ -52,7 +52,7 @@ def read(todo_id: int) -> Todo:
 def put(todo_id: int, updated_todo: Todo) -> Todo:
     index = _find_index(todo_id)
     if index == -1:
-        raise HTTPException(status_code=404, detail="Todo not found")
+        raise HTTPException(status_code=404, detail=f"Todo with id {todo_id} not found")
     # Keep the path id authoritative so the body cannot silently retarget another record.
     todos[index] = updated_todo.model_copy(update={"id": todo_id})
     return todos[index]
@@ -62,6 +62,6 @@ def put(todo_id: int, updated_todo: Todo) -> Todo:
 def delete(todo_id: int) -> dict:
     index = _find_index(todo_id)
     if index == -1:
-        raise HTTPException(status_code=404, detail="Todo not found")
+        raise HTTPException(status_code=404, detail=f"Todo with id {todo_id} not found")
     todos.pop(index)
-    return {"detail": "Todo deleted successfully"}
+    return {"detail": f"Todo with id {todo_id} deleted successfully"}
