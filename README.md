@@ -4,7 +4,7 @@ Simple FastAPI CRUD application.
 
 ## Overview
 My first FastAPI CRUD app demonstrating basic create, read, update, and delete operations on a Todo resource.
-Data is stored in-memory and resets when the server restarts. Ideal for learning and local demos.
+Data is stored in-memory (a Python list) and resets when the server restarts. Ideal for learning and local demos.
 
 ## Endpoints
 
@@ -29,14 +29,20 @@ The API will be available at `http://127.0.0.1:8000`.
 
 **Tip:** If port 8000 is busy, use `uv run uvicorn test:app --reload --port 8001`.
 
-**Note:** The FastAPI application is defined in `test.py`. `main.py` is a simple placeholder script.
+**Note:** The FastAPI application is defined in `test.py`. `main.py` is a simple placeholder script that prints usage instructions.
 
 ## Example
 
+Create a todo:
 ```bash
 curl -X POST http://127.0.0.1:8000/todos \
   -H "Content-Type: application/json" \
   -d '{"id": 1, "todo": "Learn FastAPI", "completed": false}'
 ```
 
-Updated: 2026-10-15
+List all todos:
+```bash
+curl http://127.0.0.1:8000/todos
+```
+
+Updated: 2026-10-18
