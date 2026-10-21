@@ -11,6 +11,7 @@ app = FastAPI(title="Todo CRUD")
 
 
 class Todo(BaseModel):
+    """A simple todo item with an id, description, and completion status."""
     id: int
     todo: str
     completed: bool = False
@@ -36,7 +37,8 @@ def create(todo: Todo) -> Todo:
 
 
 @app.get("/todos")
-def get() -> list[Todo]:
+def list_todos() -> list[Todo]:
+    """Return all todos currently stored in memory."""
     return todos
 
 
