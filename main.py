@@ -8,6 +8,8 @@ Run the server with:
 
 If you prefer a different port:
     uv run uvicorn test:app --reload --port 8001
+
+Docs: http://127.0.0.1:8000/docs
 """
 
 from fastapi import FastAPI
@@ -19,6 +21,7 @@ def main() -> None:
     print("The FastAPI app is defined in test.py.")
     print("Start the server with: uv run uvicorn test:app --reload")
     print("Docs available at http://127.0.0.1:8000/docs once running.")
+    print("Tip: Use --port <number> if the default port is busy.")
 
 
 if __name__ == "__main__":
