@@ -28,6 +28,12 @@ def _find_index(todo_id: int) -> int:
     return -1
 
 
+@app.get("/")
+def root() -> dict:
+    """Simple health check and API entry point."""
+    return {"message": "Todo CRUD API is running", "docs": "/docs", "todos_count": len(todos)}
+
+
 @app.post("/todos", status_code=201)
 def create(todo: Todo) -> Todo:
     if _find_index(todo.id) != -1:
