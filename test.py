@@ -36,6 +36,7 @@ def root() -> dict:
 
 @app.post("/todos", status_code=201)
 def create(todo: Todo) -> Todo:
+    """Create a new todo. IDs must be unique; duplicates are rejected with 409."""
     if _find_index(todo.id) != -1:
         raise HTTPException(status_code=409, detail=f"Todo with id {todo.id} already exists")
     todos.append(todo)
