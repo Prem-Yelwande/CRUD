@@ -49,4 +49,16 @@ List all todos:
 curl http://127.0.0.1:8000/todos
 ```
 
-Updated: 2026-10-26
+Update a todo:
+```bash
+curl -X PUT http://127.0.0.1:8000/todos/1 \
+  -H "Content-Type: application/json" \
+  -d '{"id": 1, "todo": "Master FastAPI", "completed": true}'
+```
+
+Delete a todo:
+```bash
+curl -X DELETE http://127.0.0.1:8000/todos/1
+```
+
+Updated: 2026-10-27
