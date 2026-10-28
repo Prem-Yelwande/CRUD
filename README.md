@@ -6,6 +6,8 @@ Simple FastAPI CRUD application.
 My first FastAPI CRUD app demonstrating basic create, read, update, and delete operations on a Todo resource.
 Data is stored in-memory (a Python list) and resets when the server restarts. Ideal for learning and local demos.
 
+**Note:** Because storage is in-memory, all data is lost on server restart. For persistent storage, consider integrating a database like SQLite or PostgreSQL in a future iteration.
+
 ## Requirements
 - Python 3.10+
 - [uv](https://docs.astral.sh/uv/) for dependency management (recommended)
@@ -61,4 +63,4 @@ Delete a todo:
 curl -X DELETE http://127.0.0.1:8000/todos/1
 ```
 
-Updated: 2026-10-27
+Updated: 2026-10-28
