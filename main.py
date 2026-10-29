@@ -22,8 +22,8 @@ def main(port: Optional[int] = None) -> None:
     Args:
         port: Optional custom port number to suggest in the instructions.
     """
-    print("CRUD project placeholder.")
-    print("The FastAPI app is defined in test.py.")
+    print("CRUD project — usage helper")
+    print("The FastAPI app is defined in test.py (not this file).")
     if port:
         print(f"Start the server with: uv run uvicorn test:app --reload --port {port}")
     else:
