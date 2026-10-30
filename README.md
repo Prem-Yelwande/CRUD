@@ -12,6 +12,12 @@ Data is stored in-memory (a Python list) and resets when the server restarts. Id
 - Python 3.10+
 - [uv](https://docs.astral.sh/uv/) for dependency management (recommended)
 
+## Data Model
+Each Todo item has the following fields:
+- `id` (int): Unique identifier
+- `todo` (str): Description of the task
+- `completed` (bool): Whether the task is done
+
 ## Endpoints
 
 | Method | Path              | Description              |
@@ -63,4 +69,4 @@ Delete a todo:
 curl -X DELETE http://127.0.0.1:8000/todos/1
 ```
 
-Updated: 2026-10-28
+Updated: 2026-10-30
