@@ -10,6 +10,8 @@ If you prefer a different port:
     uv run uvicorn test:app --reload --port 8001
 
 Docs: http://127.0.0.1:8000/docs
+
+Note: Data is stored in-memory and will be lost on server restart.
 """
 
 from fastapi import FastAPI
@@ -30,6 +32,7 @@ def main(port: Optional[int] = None) -> None:
         print("Start the server with: uv run uvicorn test:app --reload")
     print("Docs available at http://127.0.0.1:8000/docs once running.")
     print("Tip: Use --port <number> if the default port is busy.")
+    print("Note: Todos are stored in-memory; data resets when the server restarts.")
     print("For more details, see the README.md.")
 
 
