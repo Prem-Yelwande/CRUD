@@ -51,6 +51,7 @@ def list_todos() -> list[Todo]:
 
 @app.get("/todos/{todo_id}")
 def read(todo_id: int) -> Todo:
+    """Retrieve a single todo by its unique id. Returns 404 if not found."""
     index = _find_index(todo_id)
     if index == -1:
         raise HTTPException(status_code=404, detail=f"Todo with id {todo_id} not found")
@@ -59,6 +60,7 @@ def read(todo_id: int) -> Todo:
 
 @app.put("/todos/{todo_id}")
 def put(todo_id: int, updated_todo: Todo) -> Todo:
+    """Update an existing todo. The path id is authoritative and cannot be changed via the body."""
     index = _find_index(todo_id)
     if index == -1:
         raise HTTPException(status_code=404, detail=f"Todo with id {todo_id} not found")
@@ -69,6 +71,7 @@ def put(todo_id: int, updated_todo: Todo) -> Todo:
 
 @app.delete("/todos/{todo_id}")
 def delete(todo_id: int) -> dict:
+    """Delete a todo by id. Returns a confirmation message on success."""
     index = _find_index(todo_id)
     if index == -1:
         raise HTTPException(status_code=404, detail=f"Todo with id {todo_id} not found")
