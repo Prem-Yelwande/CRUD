@@ -20,13 +20,14 @@ Each Todo item has the following fields:
 
 ## Endpoints
 
-| Method | Path              | Description              |
-|--------|-------------------|--------------------------|
-| POST   | `/todos`          | Create a new todo        |
-| GET    | `/todos`          | List all todos          |
-| GET    | `/todos/{id}`     | Get a single todo       |
-| PUT    | `/todos/{id}`     | Update a todo           |
-| DELETE | `/todos/{id}`     | Delete a todo           |
+| Method | Path              | Description                          |
+|--------|-------------------|--------------------------------------|
+| GET    | `/`               | Health check + todo count            |
+| POST   | `/todos`          | Create a new todo                    |
+| GET    | `/todos`          | List all todos                       |
+| GET    | `/todos/{id}`     | Get a single todo                    |
+| PUT    | `/todos/{id}`     | Update a todo                        |
+| DELETE | `/todos/{id}`     | Delete a todo                        |
 
 Interactive API docs are available at `/docs` (Swagger UI) and `/redoc`.
 
@@ -69,4 +70,4 @@ Delete a todo:
 curl -X DELETE http://127.0.0.1:8000/todos/1
 ```
 
-Updated: 2026-10-30
+Updated: 2026-11-06
