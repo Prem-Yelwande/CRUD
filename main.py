@@ -9,7 +9,11 @@ Run the server with:
 If you prefer a different port:
     uv run uvicorn test:app --reload --port 8001
 
+If you need to bind to a specific host (e.g. for network access):
+    uv run uvicorn test:app --reload --host 0.0.0.0 --port 8000
+
 Docs: http://127.0.0.1:8000/docs
+OpenAPI schema: http://127.0.0.1:8000/openapi.json
 
 Note: Data is stored in-memory and will be lost on server restart.
 """
@@ -30,7 +34,9 @@ def main(port: Optional[int] = None) -> None:
         print(f"Start the server with: uv run uvicorn test:app --reload --port {port}")
     else:
         print("Start the server with: uv run uvicorn test:app --reload")
-    print("Docs available at http://127.0.0.1:8000/docs once running.")
+    print("To allow external access, add: --host 0.0.0.0")
+    print("Interactive docs: http://127.0.0.1:8000/docs")
+    print("OpenAPI JSON:   http://127.0.0.1:8000/openapi.json")
     print("Tip: Use --port <number> if the default port is busy.")
     print("Note: Todos are stored in-memory; data resets when the server restarts.")
     print("For more details, see the README.md.")
