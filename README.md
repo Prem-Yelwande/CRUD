@@ -42,6 +42,8 @@ The API will be available at `http://127.0.0.1:8000`.
 
 **Tip:** If port 8000 is busy, use `uv run uvicorn test:app --reload --port 8001`.
 
+**Tip:** Press `Ctrl+C` in the terminal to stop the development server gracefully.
+
 **Note:** The FastAPI application is defined in `test.py`. `main.py` is a simple placeholder script that prints usage instructions.
 
 ## Example
@@ -70,4 +72,8 @@ Delete a todo:
 curl -X DELETE http://127.0.0.1:8000/todos/1
 ```
 
-Updated: 2026-11-06
+## Development
+- Explore the interactive docs at http://127.0.0.1:8000/docs to try endpoints without curl.
+- The in-memory store makes it easy to experiment; restart the server to reset data.
+
+Updated: 2026-11-08
