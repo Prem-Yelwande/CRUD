@@ -38,7 +38,11 @@ def main(port: Optional[int] = None) -> None:
     print("Interactive docs: http://127.0.0.1:8000/docs")
     print("OpenAPI JSON:   http://127.0.0.1:8000/openapi.json")
     print("Tip: Use --port <number> if the default port is busy.")
-    print("Note: Todos are stored in-memory; data resets when the server restarts.")
+    print("")
+    print("Data model reminder:")
+    print("  - id (int), todo (str), completed (bool)")
+    print("")
+    print("Note: Todos are stored in-memory; all data resets when the server restarts.")
     print("For more details, see the README.md.")
 
 
