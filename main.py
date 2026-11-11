@@ -16,6 +16,7 @@ Docs: http://127.0.0.1:8000/docs
 OpenAPI schema: http://127.0.0.1:8000/openapi.json
 
 Note: Data is stored in-memory and will be lost on server restart.
+For persistence, consider adding a database in a future iteration.
 """
 
 from fastapi import FastAPI
@@ -43,6 +44,7 @@ def main(port: Optional[int] = None) -> None:
     print("  - id (int), todo (str), completed (bool)")
     print("")
     print("Note: Todos are stored in-memory; all data resets when the server restarts.")
+    print("Consider integrating a database (e.g., SQLite via SQLAlchemy) for production use.")
     print("For more details, see the README.md.")
 
 
