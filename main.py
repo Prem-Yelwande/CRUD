@@ -28,7 +28,12 @@ def main(port: Optional[int] = None) -> None:
 
     Args:
         port: Optional custom port number to suggest in the instructions.
+              Must be between 1 and 65535 if provided.
     """
+    if port is not None and not (1 <= port <= 65535):
+        print(f"Error: Invalid port {port}. Port must be between 1 and 65535.")
+        return
+
     print("CRUD project — usage helper")
     print("The FastAPI app is defined in test.py (not this file).")
     if port:
