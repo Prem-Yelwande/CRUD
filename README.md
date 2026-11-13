@@ -76,4 +76,10 @@ curl -X DELETE http://127.0.0.1:8000/todos/1
 - Explore the interactive docs at http://127.0.0.1:8000/docs to try endpoints without curl.
 - The in-memory store makes it easy to experiment; restart the server to reset data.
 
-Updated: 2026-11-08
+## Future Improvements
+- Add persistent storage (SQLite via SQLAlchemy or similar).
+- Include basic unit tests with pytest.
+- Add pagination and filtering for the list endpoint.
+- Improve input validation and error responses.
+
+Updated: 2026-11-13
