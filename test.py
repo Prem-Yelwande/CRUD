@@ -39,9 +39,10 @@ def create(todo: Todo) -> Todo:
     """Create a new todo. IDs must be unique; duplicates are rejected with 409.
 
     Empty or whitespace-only descriptions are rejected with 400.
+    Note: This is an in-memory store; data does not persist across restarts.
     """
     if not todo.todo or not todo.todo.strip():
-        raise HTTPException(status_code=400, detail="Todo description cannot be empty")
+        raise HTTPException(status_code=400, detail="Todo description cannot be empty or whitespace-only")
     if _find_index(todo.id) != -1:
         raise HTTPException(status_code=409, detail=f"Todo with id {todo.id} already exists")
     todos.append(todo)
@@ -67,7 +68,7 @@ def read(todo_id: int) -> Todo:
 def put(todo_id: int, updated_todo: Todo) -> Todo:
     """Update an existing todo. The path id is authoritative and cannot be changed via the body."""
     if not updated_todo.todo or not updated_todo.todo.strip():
-        raise HTTPException(status_code=400, detail="Todo description cannot be empty")
+        raise HTTPException(status_code=400, detail="Todo description cannot be empty or whitespace-only")
     index = _find_index(todo_id)
     if index == -1:
         raise HTTPException(status_code=404, detail=f"Todo with id {todo_id} not found")
@@ -82,5 +83,5 @@ def delete(todo_id: int) -> dict:
     index = _find_index(todo_id)
     if index == -1:
         raise HTTPException(status_code=404, detail=f"Todo with id {todo_id} not found")
-    todos.pop(index)
-    return {"detail": f"Todo with id {todo_id} deleted successfully"}
+    deleted = todos.pop(index)
+    return {"detail": f"Todo '{deleted.todo}' (id {todo_id}) deleted successfully"}
