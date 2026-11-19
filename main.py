@@ -31,7 +31,7 @@ def main(port: Optional[int] = None) -> None:
               Must be between 1 and 65535 if provided.
     """
     if port is not None and not (1 <= port <= 65535):
-        print(f"Error: Invalid port {port}. Port must be between 1 and 65535.")
+        print(f"Error: Invalid port {port}. Port must be an integer between 1 and 65535.")
         return
 
     print("CRUD project — usage helper")
@@ -45,6 +45,7 @@ def main(port: Optional[int] = None) -> None:
     print("OpenAPI JSON:   http://127.0.0.1:8000/openapi.json")
     print("Tip: Use --port <number> if the default port is busy.")
     print("Tip: Data resets on every restart (in-memory store).")
+    print("Tip: For production, disable --reload and consider a process manager like Gunicorn.")
     print("")
     print("Data model reminder:")
     print("  - id (int), todo (str), completed (bool)")
