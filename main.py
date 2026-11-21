@@ -31,7 +31,8 @@ def main(port: Optional[int] = None) -> None:
               Must be between 1 and 65535 if provided.
     """
     if port is not None and not (1 <= port <= 65535):
-        print(f"Error: Invalid port {port}. Port must be an integer between 1 and 65535.")
+        print(f"Error: Invalid port {port}. Port must be an integer between 1 and 65535 (inclusive).")
+        print("Example of a valid call: main(port=8001)")
         return
 
     print("CRUD project — usage helper")
