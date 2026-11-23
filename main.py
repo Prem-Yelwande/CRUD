@@ -34,6 +34,7 @@ def main(port: Optional[int] = None) -> None:
         print(f"Error: Invalid port {port}. Port must be an integer between 1 and 65535 (inclusive).")
         print("Example of a valid call: main(port=8001)")
         print("Common alternative: main(port=8000) for the default.")
+        print("See README.md for full endpoint documentation.")
         return
 
     print("CRUD project — usage helper")
@@ -48,6 +49,7 @@ def main(port: Optional[int] = None) -> None:
     print("Tip: Use --port <number> if the default port is busy.")
     print("Tip: Data resets on every restart (in-memory store).")
     print("Tip: For production, disable --reload and consider a process manager like Gunicorn.")
+    print("Tip: Check /docs for interactive testing of all CRUD endpoints.")
     print("")
     print("Data model reminder:")
     print("  - id (int), todo (str), completed (bool)")
