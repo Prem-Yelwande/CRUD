@@ -17,6 +17,8 @@ class Todo(BaseModel):
     completed: bool = False
 
 
+# In-memory store; data is lost on restart and is not safe for concurrent
+# writers without additional locking. Fine for learning and single-process demos.
 todos: list[Todo] = []
 
 
