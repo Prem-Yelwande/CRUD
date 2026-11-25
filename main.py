@@ -50,6 +50,7 @@ def main(port: Optional[int] = None) -> None:
     print("Tip: Data resets on every restart (in-memory store).")
     print("Tip: For production, disable --reload and consider a process manager like Gunicorn.")
     print("Tip: Check /docs for interactive testing of all CRUD endpoints.")
+    print("Tip: Always validate inputs and use HTTPS in production deployments.")
     print("")
     print("Data model reminder:")
     print("  - id (int), todo (str), completed (bool)")
