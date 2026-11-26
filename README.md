@@ -29,7 +29,7 @@ Each Todo item has the following fields:
 | PUT    | `/todos/{id}`     | Update a todo                        |
 | DELETE | `/todos/{id}`     | Delete a todo                        |
 
-Interactive API docs are available at `/docs` (Swagger UI) and `/redoc`.
+Interactive API docs are available at `/docs` (Swagger UI) and `/redoc` (ReDoc alternative).
 
 ## Run
 
@@ -74,6 +74,7 @@ curl -X DELETE http://127.0.0.1:8000/todos/1
 
 ## Development
 - Explore the interactive docs at http://127.0.0.1:8000/docs to try endpoints without curl.
+- Prefer `/redoc` for a cleaner, documentation-focused view of the API.
 - The in-memory store makes it easy to experiment; restart the server to reset data.
 
 ## Future Improvements
@@ -82,4 +83,4 @@ curl -X DELETE http://127.0.0.1:8000/todos/1
 - Add pagination and filtering for the list endpoint.
 - Improve input validation and error responses.
 
-Updated: 2026-11-13
+Updated: 2026-11-26
