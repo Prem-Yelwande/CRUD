@@ -34,6 +34,7 @@ def main(port: Optional[int] = None) -> None:
         print(f"Error: Invalid port {port}. Port must be an integer between 1 and 65535 (inclusive).")
         print("Example of a valid call: main(port=8001)")
         print("Common alternative: main(port=8000) for the default.")
+        print("Avoid privileged ports below 1024 unless running with elevated permissions.")
         print("See README.md for full endpoint documentation.")
         return
 
