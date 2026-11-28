@@ -76,11 +76,13 @@ curl -X DELETE http://127.0.0.1:8000/todos/1
 - Explore the interactive docs at http://127.0.0.1:8000/docs to try endpoints without curl.
 - Prefer `/redoc` for a cleaner, documentation-focused view of the API.
 - The in-memory store makes it easy to experiment; restart the server to reset data.
+- **Tip:** Use a tool like httpie or the Swagger UI to quickly test edge cases (empty strings, duplicate IDs).
 
 ## Future Improvements
 - Add persistent storage (SQLite via SQLAlchemy or similar).
 - Include basic unit tests with pytest.
 - Add pagination and filtering for the list endpoint.
 - Improve input validation and error responses.
+- Add request rate limiting for production-like demos.
 
-Updated: 2026-11-26
+Updated: 2026-11-28

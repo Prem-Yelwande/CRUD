@@ -2,6 +2,8 @@
 
 Data lives in a Python list and resets when the process restarts.
 Useful as a minimal FastAPI example of create/read/update/delete.
+
+Validation rejects empty descriptions and duplicate IDs with clear HTTP errors.
 """
 
 from fastapi import FastAPI, HTTPException
